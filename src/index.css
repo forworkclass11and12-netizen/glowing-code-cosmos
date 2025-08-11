@@ -151,6 +151,10 @@ All colors MUST be HSL. */
   /* Spline and watermark cover */
   .spline-container { position: relative; width: 100%; height: 100vh; }
   .watermark-cover { position: absolute; bottom: 0; width: 100%; height: 80px; background: linear-gradient(to bottom, transparent, hsl(240 20% 6% / 0.95)); pointer-events: none; }
+  /* Depth overlay for futuristic glow */
+  .depth-layers { position: fixed; inset: 0; z-index: -1; pointer-events: none; background:
+    radial-gradient(800px circle at 10% -10%, hsl(var(--primary) / 0.14), transparent 40%),
+    radial-gradient(700px circle at 90% 110%, hsl(var(--accent) / 0.12), transparent 40%); }
 
   /* Neon orbs */
   .glow-orb { position: absolute; width: 320px; height: 320px; border-radius: 9999px; filter: blur(24px); background: radial-gradient(circle at 50% 50%, hsl(var(--accent) / 0.6) 0%, transparent 60%); opacity: 0.7; pointer-events: none; }

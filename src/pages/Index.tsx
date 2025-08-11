@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import LocomotiveScroll from "locomotive-scroll";
 import { Button } from "@/components/ui/button";
+import { Github } from "lucide-react";
+
 import profileImg from "@/assets/profile-abhas.jpg";
 import p1 from "@/assets/project-1.jpg";
 import p2 from "@/assets/project-2.jpg";
@@ -76,18 +78,22 @@ const Index = () => {
       </div>
 
       {/* Main content */}
+      <div className="depth-layers" aria-hidden="true" />
       <div className="site-content opacity-0">
         <header id="hero" className="relative min-h-[100vh]">
           <nav className="absolute top-0 left-0 right-0 z-20">
             <div className="container mx-auto px-6 py-6 flex items-center justify-between">
-              <a href="#hero" className="font-semibold story-link">AP</a>
+              <a href="#hero" className="flex items-center gap-2">
+                <img src="/lovable-uploads/35bd3dff-44d5-430d-b76b-35095572b009.png" width={32} height={32} alt="Abhas Paul logo" className="h-8 w-8" />
+                <span className="sr-only">Abhas Paul</span>
+              </a>
               <ul className="hidden md:flex items-center gap-8 text-sm">
                 <li><a className="story-link" href="#about">About</a></li>
                 <li><a className="story-link" href="#projects">Projects</a></li>
                 <li><a className="story-link" href="#contact">Contact</a></li>
               </ul>
               <div className="hidden md:block">
-                <Button variant="glow" size="sm">Hire Me</Button>
+                <Button variant="glow" size="sm" className="hover-scale shadow-glow ring-2 ring-primary/40 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">Hire Me</Button>
               </div>
               <button className="md:hidden px-3 py-2 border border-border rounded-md" onClick={() => setMenuOpen((v) => !v)} aria-expanded={menuOpen} aria-controls="mobile-nav">
                 Menu
@@ -99,7 +105,7 @@ const Index = () => {
                   <li><a className="story-link" href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
                   <li><a className="story-link" href="#projects" onClick={() => setMenuOpen(false)}>Projects</a></li>
                   <li><a className="story-link" href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
-                  <li><Button variant="glow" size="sm" onClick={() => setMenuOpen(false)}>Hire Me</Button></li>
+                  <li><Button variant="glow" size="sm" className="hover-scale shadow-glow ring-2 ring-primary/40" onClick={() => setMenuOpen(false)}>Hire Me</Button></li>
                 </ul>
               </div>
             )}
@@ -131,7 +137,7 @@ const Index = () => {
                 Building immersive, cutting-edge web experiences.
               </p>
               <div className="mt-8 flex items-center justify-center gap-4">
-                <Button variant="hero" size="xl" className="hover-scale">Hire Me</Button>
+                <Button variant="hero" size="xl" className="hover-scale shadow-glow ring-2 ring-primary/50 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]">Hire Me</Button>
                 <a href="#projects" className="story-link">View Projects</a>
               </div>
             </div>
@@ -196,6 +202,14 @@ const Index = () => {
                   </div>
                 </article>
               ))}
+            </div>
+            <div className="mt-8 flex justify-center">
+              <Button asChild variant="glow" size="lg" className="hover-scale shadow-glow">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <Github className="mr-2" />
+                  See More on GitHub
+                </a>
+              </Button>
             </div>
           </section>
 
